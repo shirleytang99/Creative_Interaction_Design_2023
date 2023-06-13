@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chart JS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="myChart">
+      </canvas>
+    </div>
+
+
+    <script>
+      let myChart = document.getElementById('myChart').getContext('2d');
+
+      let chart = new Chart(myChart,{
+        type:'pie',//line,radar,pie,doughnut,etc.
+        data:{
+          labels:['Tokyo','Jakarta','Delhi','Manilla','Seoul'],
+          datasets:[{
+            label:'population',
+            data:[
+            38050000,
+            32275000,
+            27280000,
+            24650000,
+            24210000
+          ],
+          backgroundColor:[
+          'rgba(255,99,132,0.6)',
+            'rgba(54,162,235,0.6)',
+            'rgba(255,206,86,0.6)',
+            'rgba(75,192,192,0.6)',
+            'rgba(153,102,255,0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        plugins:{
+          title:{
+            display:true,
+            text:'TOP 5 World Most Populus Cities',
+            font:{
+              size:25
+            }
+          },
+          legend:{
+            display:true,
+            position:'right',
+            lablels:{
+              font:{
+                size:25
+              }
+            }
+          },
+          layout:{
+            padding:{
+              left:50,
+              right:0,
+              top:0,
+              bottom:0
+            }
+          },
+          tooltip:{
+            enabled:true
+          }
+        }
+      }
+      });
+    </script>
+  </body>
+</html>
